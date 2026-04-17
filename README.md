@@ -1,18 +1,41 @@
-## Getting Started
+# Flappy Bird (Java Swing)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A simple Flappy Bird clone built with Java Swing.
 
-## Folder Structure
+## Features
 
-The workspace contains two folders by default, where:
+- Real-time bird movement with gravity and jump controls
+- Randomly generated top/bottom pipe obstacles
+- Collision detection and game-over state
+- Score tracking based on passed pipes
+- Restart support using the space bar
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Project Structure
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- src/App.java: entry point that creates the game window
+- src/FlappyBird.java: game rendering, input, and game loop logic
+- src/*.png: sprite assets (bird, background, pipes)
+- bin/: compiled output
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Requirements
 
-## Dependency Management
+- Java 8 or newer
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Build and Run (Terminal)
+
+From the project root:
+
+```powershell
+javac -d bin src\App.java src\FlappyBird.java
+java -cp bin App
+```
+
+## Controls
+
+- Space: flap
+- Space after game over: restart
+
+## Notes
+
+- The game uses a Swing Timer running at roughly 60 FPS.
+- Images are loaded as classpath resources, so keep the PNG files in src.
